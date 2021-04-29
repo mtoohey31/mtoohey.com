@@ -1,7 +1,7 @@
 <script context="module" lang="ts">
   import { page } from "$app/stores";
   export async function load({ fetch }) {
-    const res = await fetch("/articles.json");
+    const res = await fetch("/article-index.json");
     return { props: { articles: await res.json() } };
   }
 </script>
@@ -50,7 +50,7 @@
 {#key tags}
   {#if tags.length !== 0}
     <blockquote>
-      <TagList {tags} {updateTags} />
+      Filtering By <TagList {tags} {updateTags} />
       <a
         style="float: right;"
         on:click={() => {
@@ -68,7 +68,7 @@
         >
           <div style="flex-shrink: 1.5;">
             <h2>
-              <a sveltekit:prefetch href="/articles/{article.title}"
+              <a sveltekit:prefetch href="/articles/{article.route}"
                 >{article.title}</a
               >
             </h2>
@@ -88,7 +88,7 @@
           />
         </div>
       {:else}
-        <h2><a href="/articles/{article.title}">{article.title}</a></h2>
+        <h2><a href="/articles/{article.route}">{article.title}</a></h2>
         {#if article.posted || article.modified || article.tags}
           <blockquote>
             {getInfoString(article)}<TagList tags={article.tags} {updateTags} />

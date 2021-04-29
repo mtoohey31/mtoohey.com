@@ -20,9 +20,10 @@ let metadata = articles.map((article) => {
   if (typeof attributes.title === "undefined") {
     attributes.title = path.basename(article, ".md");
   }
+  attributes.route = path.basename(article, ".md");
   return attributes;
 });
 fs.writeFileSync(
-  path.join(path.resolve().toString(), "static/articles.json"),
+  path.join(path.resolve().toString(), "static/article-index.json"),
   JSON.stringify(metadata)
 );
