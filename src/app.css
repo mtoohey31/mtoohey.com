@@ -1,0 +1,122 @@
+@import "@fontsource/fira-mono";
+@import "@fontsource/ibm-plex-sans";
+@import "nord.css";
+@import "../node_modules/prism-themes/themes/prism-nord.css";
+
+:root {
+  font-family: "IBM Plex Sans";
+  --font-sans: "IBM Plex Sans";
+  --font-mono: "Fira Mono", monospace;
+  --theme-light-text: var(--nord0);
+  --theme-light-link: var(--nord8);
+  --theme-light-link-active: var(--nord10);
+  --theme-light-background: var(--nord5);
+  --theme-light-background-content: var(--nord6);
+
+  --theme-dark-text: var(--nord6);
+  --theme-dark-link: var(--nord8);
+  --theme-dark-link-active: var(--nord10);
+  --theme-dark-background: var(--nord0);
+  --theme-dark-background-content: var(--nord1);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --theme-background: var(--theme-light-background);
+    --theme-text: var(--theme-light-text);
+    --theme-link: var(--theme-light-link);
+    --theme-link-active: var(--theme-light-link-active);
+    --theme-background: var(--theme-light-background);
+    --theme-background-content: var(--theme-light-background-content);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-background: var(--theme-dark-background);
+    --theme-text: var(--theme-dark-text);
+    --theme-link: var(--theme-dark-link);
+    --theme-link-active: var(--theme-dark-link-active);
+    --theme-background: var(--theme-dark-background);
+    --theme-background-content: var(--theme-dark-background-content);
+  }
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--theme-background);
+  font-size: 1.125rem;
+  color: var(--theme-text);
+}
+
+
+:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) > a {
+  color: var(--theme-link);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.active {
+  color: var(--nord10);
+}
+
+h1 > a {
+  font-size: 2rem;
+  color: var(--nord10);
+}
+
+h2 > a {
+  font-size: 1.875rem;
+  color: var(--nord11);
+}
+
+h3 > a {
+  font-size: 1.5rem;
+  color: var(--nord12);
+}
+
+h4 > a {
+  font-size: 1.25rem;
+  color: var(--nord13);
+}
+
+h5 > a {
+  font-size: 1.125rem;
+  color: var(--nord14);
+}
+
+h6 > a {
+  font-size: 1rem;
+  color: var(--nord15);
+}
+
+pre {
+  font-family: var(--font-mono);
+}
+
+img {
+  border-radius: 0.5rem;
+}
+
+blockquote {
+  margin-left: 0;
+  border-left: 0.25em solid var(--theme-text);
+  padding-left: 1em;
+  opacity: 50%;
+}
+
+ol,
+ul {
+  padding-inline-start: 2rem;
+}
+
+::selection {
+  background: var(--theme-link);
+}
