@@ -1,0 +1,14 @@
+name = "<your-site-name>"
+type = "javascript"
+account_id = "<your-account-id>"
+workers_dev = true
+route = ""
+zone_id = ""
+
+[build]
+command = "npm run build"
+upload = { format = "service-worker" }
+
+[site]
+bucket = "./.cloudflare/assets"
+entry-point = "./.cloudflare/worker"
