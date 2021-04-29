@@ -2,8 +2,9 @@
   "name": "mtoohey.com",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
+    "dev": "node src/lib/get-articles.js && svelte-kit dev",
+    "get-articles": "node src/lib/get-articles.js",
+    "build": "node src/lib/get-articles.js && svelte-kit build",
     "preview": "svelte-kit preview"
   },
   "devDependencies": {

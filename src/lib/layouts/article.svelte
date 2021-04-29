@@ -29,11 +29,13 @@
 
 <h1>{title}</h1>
 
-<pre
-  class="language-yaml">
+{#if public_props.length || $$props.tags}
+  <pre
+    class="language-yaml">
 {#each public_props as prop}
-<span class="token key">{prop}</span><span class="token punctuation">:</span> <span class="token {typeof $$props[prop] === 'object'? typeof $$props[prop][0] : typeof $$props[prop]}">{typeof $$props[prop] === 'object'? $$props[prop].join(', ') : $$props[prop]}</span><br/>{/each}<TagList tags={$$props.tags} caps={false}/>
+<span class="token key">{prop}</span><span class="token punctuation">:</span> <span class="token {typeof $$props[prop] === 'object'? typeof $$props[prop][0] : typeof $$props[prop]}">{typeof $$props[prop] === 'object'? $$props[prop].join(', ') : $$props[prop]}</span><br/>{/each}{#if $$props.tags}<TagList tags={$$props.tags} caps={false}/>{/if}
 </pre>
+{/if}
 
 <article>
   <slot />
