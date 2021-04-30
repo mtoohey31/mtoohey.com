@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import TagList from "$lib/TagList.svelte";
-  let blacklisted_props = ["description", "image", "layout", "route", "tags"];
+  let blacklisted_props = ["description", "image", "layout", "route", "tags", "title"];
   let public_props = Object.keys($$props).filter(
     (prop) =>
       !/^(\$\$)|(_)/.test(prop) && blacklisted_props.indexOf(prop) === -1

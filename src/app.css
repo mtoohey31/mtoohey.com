@@ -1,5 +1,3 @@
-@import "@fontsource/fira-mono";
-@import "@fontsource/ibm-plex-sans";
 @import "nord.css";
 @import "../node_modules/prism-themes/themes/prism-nord.css";
 
@@ -8,8 +6,8 @@
   --font-sans: "IBM Plex Sans";
   --font-mono: "Fira Mono", monospace;
   --theme-light-text: var(--nord0);
-  --theme-light-link: var(--nord8);
-  --theme-light-link-active: var(--nord10);
+  --theme-light-link: var(--nord10);
+  --theme-light-link-active: var(--nord8);
   --theme-light-background: var(--nord5);
   --theme-light-background-content: var(--nord6);
 
@@ -65,7 +63,7 @@ a:hover {
 }
 
 a.active {
-  color: var(--nord10);
+  color: var(--theme-link-active);
 }
 
 h1 > a {
