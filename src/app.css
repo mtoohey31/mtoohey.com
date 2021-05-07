@@ -48,7 +48,6 @@ body {
   color: var(--theme-text);
 }
 
-
 :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) > a {
   color: var(--theme-link);
 }
@@ -66,33 +65,51 @@ a.active {
   color: var(--theme-link-active);
 }
 
-h1 > a {
+h1 {
   font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+h1 > a {
   color: var(--nord10);
 }
 
 h2 > a {
-  font-size: 1.875rem;
   color: var(--nord11);
 }
 
 h3 > a {
-  font-size: 1.5rem;
   color: var(--nord12);
 }
 
 h4 > a {
-  font-size: 1.25rem;
   color: var(--nord13);
 }
 
 h5 > a {
-  font-size: 1.125rem;
   color: var(--nord14);
 }
 
 h6 > a {
-  font-size: 1rem;
   color: var(--nord15);
 }
 

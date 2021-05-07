@@ -29,6 +29,7 @@
     margin: 1rem;
     display: flex;
     justify-content: space-between;
+    overflow-x: hidden;
   }
   span {
     padding-left: 1rem;
