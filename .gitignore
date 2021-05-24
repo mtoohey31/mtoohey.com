@@ -1,8 +1,8 @@
 .DS_Store
 node_modules
-/.cloudflare
-/.svelte
-/build
-/functions
+.cloudflare
+.svelte
+build
+functions
 wrangler.toml
 static/article-index.json
