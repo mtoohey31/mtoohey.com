@@ -1,9 +1,9 @@
-name = "<your-site-name>"
+name = "<your-worker-name>"
 type = "javascript"
 account_id = "<your-account-id>"
 workers_dev = false
-route = ""
-zone_id = ""
+routes = ["<route-1>", "<route-2>", "<etc>"]
+zone_id = "<your-zone-id>"
 
 [build]
 command = "npm run build"
