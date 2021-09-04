@@ -2,13 +2,14 @@
   "name": "mtoohey.com",
   "version": "0.0.1",
   "scripts": {
-    "dev": "node src/lib/get-articles.js && svelte-kit dev",
-    "get-articles": "node src/lib/get-articles.js",
-    "build": "node src/lib/get-articles.js && svelte-kit build",
+    "dev": "node src/lib/get-articles.js && node src/lib/generate-rss.js && svelte-kit dev",
+    "build": "node src/lib/get-articles.js && node src/lib/generate-rss.js && svelte-kit build",
     "preview": "svelte-kit preview"
   },
   "devDependencies": {
     "@sveltejs/kit": "next",
+    "@types/jstoxml": "^2.0.1",
+    "jstoxml": "^2.2.2",
     "mdsvex": "^0.9.0",
     "rehype-autolink-headings": "^5.0.1",
     "rehype-slug": "^4.0.1",
