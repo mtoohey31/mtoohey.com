@@ -60,7 +60,9 @@
     </blockquote>
   {/if}
   {#if filteredArticles.length}
-    {#each filteredArticles as article}
+    {#each filteredArticles.sort((a, b) => {
+      return new Date(b.posted) - new Date(a.posted);
+    }) as article}
       <hr />
       {#if article.image}
         <div
