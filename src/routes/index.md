@@ -2,6 +2,10 @@
 layout: page
 ---
 
+<article itemscope itemtype="http://schema.org/Author">
+
+<h1 itemprop="name">Matthew Toohey</h1>
+
 ## Who Am I?
 
 - Second year computer science student at the University of Toronto, minoring in Economics and Statistics
@@ -31,3 +35,5 @@ I did audiovisual club in high school and really enjoyed it, so I have experienc
 ### :electric_plug: Self-hosting
 
 I'm currently running [TrueNAS Core](https://www.truenas.com/) with a [Plex](https://www.plex.tv/) jail and SMB shares for backups over the network for large file storage, and running a Raspberry Pi 4 Model B 4GB for [Home Assistant](https://www.home-assistant.io/) and other lightweight services that need to be always-on. I'm really looking forward to boards for the Compute Module 4 that support M.2's so I can turn off the desktop for good.
+
+</article>
