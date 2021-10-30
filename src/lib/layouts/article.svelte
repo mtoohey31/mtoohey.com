@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import TagList from "$lib/TagList.svelte";
   let blacklisted_props = [
     "description",
@@ -44,13 +44,11 @@
   {/if}
   <h1 itemprop="name headline">{$$props.title}</h1>
 
-  {#if public_props.length || $$props.tags}
-    <pre
-      class="language-yaml">
-{#each public_props as prop}
-<span class="token key">{prop}</span><span class="token punctuation">:</span> <span class="token {typeof $$props[prop] === 'object'? typeof $$props[prop][0] : typeof $$props[prop]}">{typeof $$props[prop] === 'object'? $$props[prop].join(', ') : $$props[prop]}</span><br/>{/each}{#if $$props.tags}<TagList tags={$$props.tags} caps={false} brackets={true}/>{/if}<br />{#if $$props.author}<span class="token key">author</span><span class="token punctuation">:</span> <span itemprop="author" class="token string">{$$props.author}<br/></span>{:else}<span class="token key">author</span><span class="token punctuation">:</span> <a itemprop="author" rel="author" href="/" class="token string">Matthew Toohey</a><br/>{/if}
-</pre>
-  {/if}
+  <pre
+    class="language-yaml">
+  {#each public_props as prop}
+  <span class="token key">{prop}</span><span class="token punctuation">:</span> <span class="token {typeof $$props[prop] === 'object'? typeof $$props[prop][0] : typeof $$props[prop]}">{typeof $$props[prop] === 'object'? $$props[prop].join(', ') : $$props[prop]}</span><br/>{/each}{#if $$props.tags}<TagList tags={$$props.tags} caps={false} brackets={true}/>{/if}<br />{#if $$props.author}<span class="token key">author</span><span class="token punctuation">:</span> <span itemprop="author" class="token string">{$$props.author}<br/></span>{:else}<span class="token key">author</span><span class="token punctuation">:</span> <a itemprop="author" rel="author" href="/" class="token string">Matthew Toohey</a><br/>{/if}
+  </pre>
 
   <div itemprop="articleBody">
     <slot />

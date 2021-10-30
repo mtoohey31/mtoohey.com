@@ -2,32 +2,34 @@
   "name": "mtoohey.com",
   "version": "0.0.1",
   "scripts": {
-    "dev": "node src/lib/get-articles.js && node src/lib/generate-rss.js && svelte-kit dev",
-    "build": "node src/lib/get-articles.js && node src/lib/generate-rss.js && svelte-kit build",
-    "preview": "svelte-kit preview"
+    "dev": "\"$npm_node_execpath\" src/lib/get-articles.js && \"$npm_node_execpath\" src/lib/generate-rss.js && svelte-kit dev",
+    "build": "\"$npm_node_execpath\" src/lib/get-articles.js && \"$npm_node_execpath\" src/lib/generate-rss.js && svelte-kit build",
+    "preview": "svelte-kit preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "devDependencies": {
     "@sveltejs/kit": "next",
     "@types/jstoxml": "^2.0.1",
-    "jstoxml": "^2.2.2",
-    "mdsvex": "^0.9.0",
-    "rehype-autolink-headings": "^5.0.1",
+    "jstoxml": "^2.2.5",
+    "mdsvex": "^0.9.8",
+    "rehype-autolink-headings": "^5.1.0",
     "rehype-slug": "^4.0.1",
     "remark-abbr": "^1.4.1",
-    "remark-github": "^10.0.1",
-    "svelte": "^3.29.0",
-    "svelte-preprocess": "^4.0.0",
-    "tslib": "^2.0.0",
-    "typescript": "^4.0.0",
-    "vite": "^2.2.3"
+    "remark-github": "^10.1.0",
+    "svelte": "^3.44.0",
+    "svelte-check": "^2.2.8",
+    "svelte-preprocess": "^4.9.8",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.4",
+    "vite": "^2.6.13"
   },
   "type": "module",
   "dependencies": {
     "@mdi/js": "^5.9.55",
-    "@sveltejs/adapter-cloudflare-workers": "^0.0.2-next.4",
+    "@sveltejs/adapter-cloudflare-workers": "^0.0.2-next.6",
     "front-matter": "^4.0.2",
-    "prism-themes": "^1.6.0",
-    "remark-gemoji": "^6.0.0",
-    "svelte-prism": "^1.1.3"
+    "prism-themes": "^1.9.0",
+    "remark-gemoji": "^6.0.0"
   }
 }

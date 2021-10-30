@@ -1,7 +1,7 @@
 .DS_Store
-node_modules
-.cloudflare
-.svelte
+/node_modules
+/.cloudflare
+/.svelte-kit
 build
 functions
 wrangler.toml
