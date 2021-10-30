@@ -4,7 +4,7 @@
 :root {
   font-family: "IBM Plex Sans";
   --font-sans: "IBM Plex Sans";
-  --font-mono: "Fira Mono", monospace;
+  --font-mono: "JetBrains Mono", monospace;
   --theme-light-text: var(--nord0);
   --theme-light-link: var(--nord10);
   --theme-light-link-active: var(--nord8);
@@ -46,6 +46,15 @@ body {
   background-color: var(--theme-background);
   font-size: 1.125rem;
   color: var(--theme-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
 }
 
 :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) > a {

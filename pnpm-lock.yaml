@@ -1,6 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@fontsource/ibm-plex-sans': ^4.5.1
+  '@fontsource/jetbrains-mono': ^4.5.0
   '@mdi/js': ^5.9.55
   '@sveltejs/adapter-cloudflare-workers': 1.0.0-next.24
   '@sveltejs/kit': ^1.0.0-next.192
@@ -22,6 +24,8 @@ specifiers:
   vite: ^2.6.13
 
 dependencies:
+  '@fontsource/ibm-plex-sans': 4.5.1
+  '@fontsource/jetbrains-mono': 4.5.0
   '@mdi/js': 5.9.55
   '@sveltejs/adapter-cloudflare-workers': 1.0.0-next.24
   front-matter: 4.0.2
@@ -45,6 +49,14 @@ devDependencies:
   vite: 2.6.13
 
 packages:
+
+  /@fontsource/ibm-plex-sans/4.5.1:
+    resolution: {integrity: sha512-Jz+Jgjhrzv21MrsJbUV2sewRrCsKv51NuQFje1QWQbn2E4L1G58pxb6+H9N6EdELlvZvwBffvTYS4OWrF4r71A==}
+    dev: false
+
+  /@fontsource/jetbrains-mono/4.5.0:
+    resolution: {integrity: sha512-gxUlpdCLoIrEQ6+1hkPbFHuQz8E5bPZ/iERU+13zEKb8rD/h21v3uHuAT7dTD+Co9nbSlgk6fyVkFwF5edUMog==}
+    dev: false
 
   /@iarna/toml/2.2.5:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
