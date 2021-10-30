@@ -4,5 +4,6 @@
 /.svelte-kit
 /build
 /wrangler.toml
-/static/article-index.json
-/static/rss.xml
+/static
+/package.json
+/pnpm-lock.yaml

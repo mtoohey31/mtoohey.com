@@ -1,0 +1,30 @@
+name: Build with pnpm
+# name: Check and build with Svelte and pnpm
+on:
+  push:
+    branches: ["**"]
+jobs:
+  build:
+    # check_build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.18.0
+          run_install: true
+      # TODO: enable this once type errors are resolved
+      # - name: Check with Svelte
+      #   run: pnpm run check
+      - name: Set up placeholder wrangler.toml
+        run: cp wrangler.toml.example wrangler.toml
+      #   run: |
+      #     echo 'name = "<your-site-name>"
+      #     type = "javascript"
+      #     account_id = "<your-account-id>"
+      #     workers_dev = true
+      #     route = ""
+      #     zone_id = ""' > wrangler.toml
+      - name: Build with pnpm
+        run: pnpm run build
