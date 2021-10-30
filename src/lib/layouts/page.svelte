@@ -11,4 +11,8 @@
   <title>{title}</title>
 </svelte:head>
 
+{#if $page.path !== "/"}
+  <h1>{title}</h1>
+{/if}
+
 <slot />
