@@ -1,8 +1,8 @@
 module.exports = {
   layout: {
-    article: './src/lib/layouts/article.svelte',
-    page: './src/lib/layouts/page.svelte',
-    _: './src/lib/layouts/article.svelte',
+    article: "./src/lib/layouts/article.svelte",
+    page: "./src/lib/layouts/page.svelte",
+    _: "./src/lib/layouts/article.svelte",
   },
   extensions: [".svx", ".md"],
   smartypants: {
