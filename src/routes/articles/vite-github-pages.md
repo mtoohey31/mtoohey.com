@@ -2,10 +2,11 @@
 title: Deploying a Vite App to GitHub Pages
 description: GitHub pages require relative paths to assets, which Vite doesn't cooperate with by default, but we can fix that!
 posted: November 20, 2021
+modified: November 21, 2021
 tags: [Vite, GitHub, GitHub Pages]
 ---
 
-<!-- cspell:ignore Vite -->
+<!-- cspell:ignore Vite nojekyll -->
 
 ## The Starting Point
 
@@ -55,7 +56,7 @@ This script will use `gh-pages` to deploy the application to the `gh-pages` bran
 }
 ```
 
-The `--base='./'` argument ensures that Vite will prefix asset links with `"./"` instead of `"/"`, which is required since GitHub pages will deploy your site to a sub-route of `https://<github username>.github.io`. Finally, to deploy the site, run:
+The `--base='./'` argument ensures that Vite will prefix asset links with `"./"` instead of `"/"`, which is required since GitHub pages will deploy your site to a sub-route of `https://<github username>.github.io`. Finally, create an empty `.nojekyll` file in the `public/` directory of your project. This will prevent GitHub from trying to transform the repo with Jekyll. Then, to deploy the site, run:
 
 ```bash
 npm run deploy # or yarn or pnpm
