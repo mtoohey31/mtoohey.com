@@ -6,7 +6,7 @@ modified: November 21, 2021
 tags: [Vite, GitHub, GitHub Pages]
 ---
 
-<!-- cspell:ignore Vite nojekyll -->
+<!-- cspell:ignore vite nojekyll -->
 
 ## The Starting Point
 

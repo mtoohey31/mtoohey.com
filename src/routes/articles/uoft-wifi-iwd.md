@@ -5,6 +5,8 @@ posted: August 25, 2021
 tags: [UofT, WiFi, iwd]
 ---
 
+<!-- cspell:ignore TLDR wlan iwctl utorid peap eduroam ssid -->
+
 ## The TLDR
 
 ```toml

@@ -5,7 +5,7 @@ posted: October 26, 2021
 tags: [Termux, Rsync, photos, backup, Android]
 ---
 
-<!-- cSpell:ignore termux dcim healthchecks -->
+<!-- cspell:ignore termux dcim healthchecks -->
 
 ## The Plan
 
