@@ -8,7 +8,7 @@
 
 <script lang="ts">
   import TagList from "$lib/TagList.svelte";
-  function getInfoString(article) {
+  function getInfoString(article: { posted?: string; modified?: string }) {
     let arr = [];
     if (article.posted) {
       arr.push(`Posted: ${article.posted}`);
@@ -19,7 +19,7 @@
     return arr.length === 0 ? "" : arr.join("; ") + "; ";
   }
   let tags = $page.query.getAll("tag");
-  function updateTags(tag?: String): void {
+  function updateTags(tag?: string): void {
     if (tag) {
       tags = [tag];
       let searchParams = new URLSearchParams();
@@ -34,8 +34,9 @@
   function getFilteredArticles() {
     return tags.length
       ? $$props.articles.filter(
-          (article) =>
-            article.tags && tags.some((tag) => article.tags.indexOf(tag) !== -1)
+          (article: { tags?: string[] }) =>
+            article.tags &&
+            tags.some((tag: string) => article.tags.indexOf(tag) !== -1)
         )
       : $$props.articles;
   }
@@ -51,17 +52,19 @@
   {#if tags.length !== 0}
     <blockquote>
       Filtering By <TagList {tags} {updateTags} />
-      <a
-        style="float: right;"
+      <div
+        style="float: right; cursor: pointer;"
         on:click={() => {
           updateTags();
-        }}>Clear</a
+        }}
       >
+        Clear
+      </div>
     </blockquote>
   {/if}
   {#if filteredArticles.length}
     {#each filteredArticles.sort((a, b) => {
-      return new Date(b.posted) - new Date(a.posted);
+      return +new Date(b.posted) - +new Date(a.posted);
     }) as article}
       <hr />
       {#if article.image}
