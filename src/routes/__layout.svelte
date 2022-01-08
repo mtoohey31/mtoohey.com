@@ -1,8 +1,11 @@
 <script lang="ts">
   import "../app.css";
+  import GoMeta from "$lib/GoMeta.svelte";
   import Header from "$lib/Header.svelte";
   import Footer from "$lib/Footer.svelte";
 </script>
+
+<GoMeta redirect="https://github.com/mtoohey31" />
 
 <Header />
 
