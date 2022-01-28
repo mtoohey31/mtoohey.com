@@ -6,27 +6,18 @@ import cloudflareWorkersAdapter from "@sveltejs/adapter-cloudflare-workers";
 // import nodeAdapter from "@sveltejs/adapter-node";
 
 /** @type {import('@sveltejs/kit').Config} */
-// module.exports = {
-//   extensions: [".svelte", ...mdsvexConfig.extensions],
-//   // Consult https://github.com/sveltejs/svelte-preprocess
-//   // for more information about preprocessors
-//   preprocess: [mdsvex(mdsvexConfig), preprocess()],
-
-//   kit: {
-//     // hydrate the <div id="svelte"> element in src/app.html
-//     target: "#svelte",
-//     // adapter: staticAdapter(),
-//     adapter: cloudflareWorkersAdapter(),
-//     // adapter: nodeAdapter(),
-//   },
-// };
-
-/** @type {import('@sveltejs/kit').Config} */
 const config = {
   extensions: [".svelte", ...mdsvexConfig.extensions],
   // Consult https://github.com/sveltejs/svelte-preprocess
   // for more information about preprocessors
-  preprocess: [mdsvex(mdsvexConfig), preprocess()],
+  preprocess: [
+    mdsvex(mdsvexConfig),
+    preprocess(
+      preprocess({
+        postcss: true,
+      })
+    ),
+  ],
 
   kit: {
     // hydrate the <div id="svelte"> element in src/app.html

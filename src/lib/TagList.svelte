@@ -7,22 +7,11 @@
 
 <span>{caps ? "T" : "t"}ags: </span>
 {#if brackets}[{/if}{#if updateTags}{#each tags.slice(0, -1) as tag}
-    <div class="clickable" style="display: inline;" on:click={() => updateTags(tag)}>{tag}</div><span>,</span>
-  {/each}<div class="clickable" style="display: inline;" on:click={() => updateTags(tags[tags.length - 1])}
+    <div class="text-nord8 hover:underline cursor-pointer inline" on:click={() => updateTags(tag)}>{tag}</div><span>,</span>
+  {/each}<div class="text-nord8 hover:underline cursor-pointer inline" on:click={() => updateTags(tags[tags.length - 1])}
     >{tags[tags.length - 1]}</div
   >{:else}{#each tags.slice(0, -1) as tag}
     <a href="/articles?tag={encodeURIComponent(tag)}">{tag}</a><span>,</span>
   {/each}<a href="/articles?tag={encodeURIComponent(tags[tags.length - 1])}"
     >{tags[tags.length - 1]}</a
   >{/if}{#if brackets}]{/if}
-
-<style>
-  .clickable:hover {
-    text-decoration: underline;
-    cursor: pointer;
-    color: var(--theme-link);
-  }
-  .clickable {
-    color: var(--theme-link);
-  }
-</style>

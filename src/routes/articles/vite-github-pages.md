@@ -68,7 +68,7 @@ Your site should now be available at `https://<github username>.github.io/<repo 
 
 1. Ensure the build is actually being created by checking for the `gh-pages` branch on the GitHub repository.
 2. Make sure the build actually works: fetch and check out the `gh-pages` branch then try serving it with something like `python2 -m SimpleHTTPServer 8000`.
-3. Check your repository's pages settings under Settings > Pages, and ensure that the branch is `gh-pages`, and the directory is `/ (root)`. If things are working correctly, the page should display: "Your site is published at https://<github username>.github.io/<repo name>/".
+3. Check your repository's pages settings under Settings > Pages, and ensure that the branch is `gh-pages`, and the directory is `/ (root)`. If things are working correctly, the page should display: "Your site is published at `https://<github username>.github.io/<repo name>/`".
 
 ## Sources
 

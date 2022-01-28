@@ -9,18 +9,10 @@
 
 <Header />
 
-<main>
+<main
+  class="bg-nord6 dark:bg-nord1 rounded-2xl sm:mx-4 lg:mx-auto max-w-screen-lg p-4"
+>
   <slot />
 </main>
 
 <Footer />
-
-<style>
-  main {
-    padding: 1rem;
-    width: clamp(45ch, calc(100vw - 4rem), 100ch);
-    background-color: var(--theme-background-content);
-    margin: 0 auto;
-    border-radius: 1rem;
-  }
-</style>

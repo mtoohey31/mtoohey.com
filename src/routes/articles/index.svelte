@@ -53,7 +53,7 @@
     <blockquote>
       Filtering By <TagList {tags} {updateTags} />
       <div
-        style="float: right; cursor: pointer;"
+        class="cursor-pointer float-right hover:underline"
         on:click={() => {
           updateTags();
         }}
@@ -69,9 +69,9 @@
       <hr />
       {#if article.image}
         <div
-          style="display: flex; justify-content: space-between; height: 100%;"
+          class="flex justify-between h-full"
         >
-          <div style="flex-shrink: 1.5;">
+          <div class="flex-shrink">
             <h2>
               <a sveltekit:prefetch href="/articles/{article.route}"
                 >{article.title}</a
@@ -89,7 +89,7 @@
           </div>
           <img
             src={article.image}
-            style="flex-shrink: 1; align-self: center; overflow: scroll; width: 100%; display: inline-flex;"
+            class="flex-shrink self-center overflow-scroll w-full inline-flex"
           />
         </div>
       {:else}

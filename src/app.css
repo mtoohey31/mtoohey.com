@@ -1,51 +1,10 @@
-@import "nord.css";
 @import "../node_modules/prism-themes/themes/prism-nord.css";
-
-:root {
-  font-family: "IBM Plex Sans";
-  --font-sans: "IBM Plex Sans";
-  --font-mono: "JetBrains Mono", monospace;
-  --theme-light-text: var(--nord0);
-  --theme-light-link: var(--nord10);
-  --theme-light-link-active: var(--nord8);
-  --theme-light-background: var(--nord5);
-  --theme-light-background-content: var(--nord6);
-
-  --theme-dark-text: var(--nord6);
-  --theme-dark-link: var(--nord8);
-  --theme-dark-link-active: var(--nord10);
-  --theme-dark-background: var(--nord0);
-  --theme-dark-background-content: var(--nord1);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --theme-background: var(--theme-light-background);
-    --theme-text: var(--theme-light-text);
-    --theme-link: var(--theme-light-link);
-    --theme-link-active: var(--theme-light-link-active);
-    --theme-background: var(--theme-light-background);
-    --theme-background-content: var(--theme-light-background-content);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --theme-background: var(--theme-dark-background);
-    --theme-text: var(--theme-dark-text);
-    --theme-link: var(--theme-dark-link);
-    --theme-link-active: var(--theme-dark-link-active);
-    --theme-background: var(--theme-dark-background);
-    --theme-background-content: var(--theme-dark-background-content);
-  }
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  min-height: 100vh;
-  margin: 0;
-  background-color: var(--theme-background);
-  font-size: 1.125rem;
-  color: var(--theme-text);
+  @apply h-full m-0 bg-nord5 dark:bg-nord0 text-lg text-nord0 dark:text-nord6;
 }
 
 h1,
@@ -54,94 +13,63 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 500;
-}
-
-:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) > a {
-  color: var(--theme-link);
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-a.active {
-  color: var(--theme-link-active);
+  @apply font-medium pt-4 pb-4;
 }
 
 h1 {
-  font-size: 2rem;
+  @apply text-4xl;
 }
 
 h2 {
-  font-size: 1.875rem;
+  @apply text-3xl text-nord11;
 }
 
 h3 {
-  font-size: 1.5rem;
+  @apply text-2xl text-nord12;
 }
 
 h4 {
-  font-size: 1.25rem;
+  @apply text-xl text-nord13;
 }
 
 h5 {
-  font-size: 1.125rem;
+  @apply text-lg text-nord14;
 }
 
 h6 {
-  font-size: 1rem;
+  @apply text-base text-nord15;
 }
 
-h1 > a {
-  color: var(--nord10);
+:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) > a {
+  @apply text-nord10 dark:text-nord8;
 }
 
-h2 > a {
-  color: var(--nord11);
-}
-
-h3 > a {
-  color: var(--nord12);
-}
-
-h4 > a {
-  color: var(--nord13);
-}
-
-h5 > a {
-  color: var(--nord14);
-}
-
-h6 > a {
-  color: var(--nord15);
+a:hover {
+  @apply underline;
 }
 
 pre {
-  font-family: var(--font-mono);
+  @apply font-mono;
 }
 
 img {
-  border-radius: 0.5rem;
+  @apply rounded-lg;
 }
 
 blockquote {
-  margin-left: 0;
-  border-left: 0.25em solid var(--theme-text);
-  padding-left: 1em;
-  opacity: 50%;
+  @apply ml-0 border-l-4 opacity-50 p-2 pl-4 mb-2;
+}
+
+hr {
+  @apply my-2 border-t-2;
 }
 
 ol,
 ul {
   padding-inline-start: 2rem;
+  @apply list-disc;
 }
 
 ::selection {
-  background: var(--theme-link);
+  @apply bg-nord10 dark:bg-nord8;
 }
