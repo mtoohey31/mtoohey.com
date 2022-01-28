@@ -17,11 +17,11 @@ layout: page
 
 ### :computer: Programming
 
-My main languages are Python and Java (which we used in my first and second year CS courses respectively), as well and JavaScript/Typescript and Rust, which I've used on a lot of side projects. In terms of web development, I have some experience with [React](https://reactjs.org/) and [Svelte](https://svelte.dev/) (this site is built with [Svelte Kit](https://kit.svelte.dev/)). Check out my projects on [GitHub](https://github.com/mtoohey31).
+I've played around with a bunch of languages, including Python, Go, C, Rust, Java, Lua, TypeScript, etc. In terms of web development, I have some experience with [React](https://reactjs.org/) and [Svelte](https://svelte.dev/) (this site is built with [Svelte Kit](https://kit.svelte.dev/)). Check out my projects on [GitHub](https://github.com/mtoohey31).
 
 ### :penguin: Linux
 
-Though it's not perfect, I love Linux! I use Arch... and I've been really enjoying [sway](https://github.com/swaywm/sway/) on Wayland recently. I'm also a long-time [Neovim](https://github.com/neovim/neovim) user, I'm finally shifting my configuration over to Lua soon, and have been checking out the built-in LSP and Treesitter. Check out my [dotfiles](https://github.com/mtoohey31/dotfiles) if you're interested.
+I use Arch... and I've been really enjoying [sway](https://github.com/swaywm/sway/) on Wayland recently. I'm also a long-time [Neovim](https://github.com/neovim/neovim) user; I've recently switched my config to `init.lua` with built-in LSP and Treesitter. Check out my [dotfiles](https://github.com/mtoohey31/dotfiles) if you're interested.
 
 ### :keyboard: Mechanical Keyboards
 
