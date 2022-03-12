@@ -25,14 +25,11 @@ I use Arch... and I've been really enjoying [sway](https://github.com/swaywm/swa
 
 ### :keyboard: Mechanical Keyboards
 
-<div style="display: flex; width: 100%; margin-bottom: 1rem;">
-    <img src="/corne-ish-zen.jpg" alt="Corne-ish Zen" style="max-width: calc(50% - 0.5rem); margin-right: 0.5rem;"/>
-    <img src="/planck-light.jpg" alt="Planck Light" style="max-width: calc(50% - 0.5rem); margin-left: 0.5rem;"/>
-</div>
-
-<div style="display: flex; width: 100%;">
-    <img src="/crkbd-kat-milkshake.jpg" alt="CRKBD with KAT Milkshake" style="max-width: calc(50% - 0.5rem); margin-right: 0.5rem;"/>
-    <img src="/crkbd-epbt-2048-zilent-blueberries.jpg" alt="CRKBD with EBPT 2048 and Zilent Blueberries" style="max-width: calc(50% - 0.5rem); margin-left: 0.5rem;"/>
+<div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
+    <img src="/corne-ish-zen.jpg" alt="Corne-ish Zen" />
+    <img src="/planck-light.jpg" alt="Planck Light" />
+    <img src="/crkbd-kat-milkshake.jpg" alt="CRKBD with KAT Milkshake" />
+    <img src="/crkbd-epbt-2048-zilent-blueberries.jpg" alt="CRKBD with EBPT 2048 and Zilent Blueberries" />
 </div>
 
 I'm the happy owner of a [Corne-ish Zen](https://lowprokb.ca/products/corne-ish-zen-2), a [Planck Light](https://drop.com/buy/massdrop-x-olkb-planck-light-mechanical-keyboard), a [CRKBD](https://github.com/foostan/crkbd) (aka Corne) with Mill-Max hot-swap sockets installed and some quirks because of some unfortunate mistakes that were made during the build process... Check out my current keymaps for the [Corne-ish Zen](https://github.com/mtoohey31/zmk-config-Corne-ish-Zen), [Planck Light](https://github.com/mtoohey31/planck-keymap), and [CRKBD](https://github.com/mtoohey31/crkbd-keymap).
