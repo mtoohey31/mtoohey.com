@@ -8,7 +8,7 @@ layout: page
 
 ## Who Am I?
 
-- Second year computer science student at the University of Toronto, minoring in Economics and Statistics
+- Second year computer science student at the University of Toronto
 - Developer
 - Mechanical keyboard enthusiast
 - _Amateur_ musician
