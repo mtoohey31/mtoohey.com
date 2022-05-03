@@ -7,6 +7,16 @@
   outputs = { nixpkgs, flake-utils, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       with import nixpkgs { inherit system; }; {
-        devShells.default = mkShell { nativeBuildInputs = [ nodePackages.pnpm wrangler nodePackages.npm nodejs ]; };
+        devShells.default = mkShell {
+          nativeBuildInputs =
+            [
+              wrangler
+              nodejs
+            ] ++ (with nodePackages; [
+              npm
+              pnpm
+              prettier
+            ]);
+        };
       });
 }

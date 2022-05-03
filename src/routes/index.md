@@ -8,20 +8,19 @@ layout: page
 
 ## Who Am I?
 
-- Second year computer science student at the University of Toronto
-- Developer
+- Computer Science student at the University of Toronto, minoring in Statistics and Economics
 - Mechanical keyboard enthusiast
 - _Amateur_ musician
 
-## Hobbies
+## Interests
 
 ### :computer: Programming
 
-I've played around with a bunch of languages, including Python, Go, C, Rust, Java, Lua, TypeScript, etc. In terms of web development, I have some experience with [React](https://reactjs.org/) and [Svelte](https://svelte.dev/) (this site is built with [Svelte Kit](https://kit.svelte.dev/)). Check out my projects on [GitHub](https://github.com/mtoohey31).
+I enjoy working with low-level languages and doing systems programming. Some of the subfields I'm interested in are functional programming, language design, and OS design. Check out my projects on [GitHub](https://github.com/mtoohey31).
 
-### :penguin: Linux
+### :penguin: + :snowflake: Linux
 
-I use Arch... and I've been really enjoying [sway](https://github.com/swaywm/sway/) on Wayland recently. I'm also a long-time [Neovim](https://github.com/neovim/neovim) user; I've recently switched my config to `init.lua` with built-in LSP and Treesitter. Check out my [dotfiles](https://github.com/mtoohey31/dotfiles) if you're interested.
+I recently switched from Arch to [NixOS](https://nixos.org/), and I've been loving the declarative way it allows you to manage your system's configuration. I'm still in the process of switching over some of the machines I use less frequently, but once that's done, all of my configuration will be stored at [mtoohey31/infra](https://github.com/mtoohey31/infra). I also recently swapped from [Neovim](https://github.com/neovim/neovim) to [Helix](https://helix-editor.com/) because of its first class support for tree-sitter and LSP. Helix also supports multi-cursor and takes inspiration from [Kakoune](http://kakoune.org/) in terms of its inverted (compared to Vim) approach to nouns and verbs, though it's still missing many features that make Vim and Neovim amazing, such as plugins...
 
 ### :keyboard: Mechanical Keyboards
 
@@ -32,7 +31,13 @@ I use Arch... and I've been really enjoying [sway](https://github.com/swaywm/swa
     <img src="/crkbd-epbt-2048-zilent-blueberries.jpg" alt="CRKBD with EBPT 2048 and Zilent Blueberries" />
 </div>
 
-I'm the happy owner of a [Corne-ish Zen](https://lowprokb.ca/products/corne-ish-zen-2), a [Planck Light](https://drop.com/buy/massdrop-x-olkb-planck-light-mechanical-keyboard), a [CRKBD](https://github.com/foostan/crkbd) (aka Corne) with Mill-Max hot-swap sockets installed and some quirks because of some unfortunate mistakes that were made during the build process... Check out my current keymaps for the [Corne-ish Zen](https://github.com/mtoohey31/zmk-config-Corne-ish-Zen), [Planck Light](https://github.com/mtoohey31/planck-keymap), and [CRKBD](https://github.com/mtoohey31/crkbd-keymap).
+I enjoy the hobby more so for the keymap customization than for the sound/feel/appearance aspects; my three keyboards and the keymap I use for each are linked below.
+
+| Board                                                                                 | Keymap                                                                                      |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [Corne-ish Zen](https://lowprokb.ca/products/corne-ish-zen)                           | [mtoohey31/zmk-config-Corne-ish-Zen](https://github.com/mtoohey31/zmk-config-Corne-ish-Zen) |
+| [Planck Light](https://drop.com/buy/massdrop-x-olkb-planck-light-mechanical-keyboard) | [mtoohey31/planck-keymap](https://github.com/mtoohey31/planck-keymap)                       |
+| [CRKBD](https://github.com/foostan/crkbd) (aka Corne) with Mill-Max hot-swap sockets  | [mtoohey31/crkbd-keymap](https://github.com/mtoohey31/crkbd-keymap)                         |
 
 ### :electric_plug: Self-hosting
 
