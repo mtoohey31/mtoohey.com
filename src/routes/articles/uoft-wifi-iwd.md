@@ -2,6 +2,7 @@
 title: Connecting to UofT WiFi with iwd
 description: WPA enterprise configuration with IWD can be a little confusing, but here's what worked for me with UofT's WiFi network.
 posted: August 25, 2021
+modified: July 4, 2022
 tags: [UofT, WiFi, iwd]
 ---
 
@@ -22,7 +23,7 @@ EAP-PEAP-Phase2-Password=<utorid_password>
 AutoConnect=true
 ```
 
-Create this file (you'll need root access), and replace `<utorid>` and `<utorid_password>` with your credentials, then connect by running `iwctl` and entering `station <wlan> connect UofT`.
+Create this file (you'll need root access), and replace `<utorid>` and `<utorid_password>` with your credentials, then connect by running `iwctl` and entering `station <wlan> connect UofT`, but with `<wlan>` replaced by the name of your adapter.
 
 ## The Explanation
 
