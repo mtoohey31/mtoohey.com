@@ -16,6 +16,7 @@
               npm
               pnpm
               prettier
+              svelte-language-server
             ]);
         };
       });
