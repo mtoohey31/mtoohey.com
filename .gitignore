@@ -6,3 +6,4 @@
 /wrangler.toml
 /static/article-index.json
 /static/rss.xml
+/.direnv
