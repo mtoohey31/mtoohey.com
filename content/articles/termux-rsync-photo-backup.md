@@ -1,6 +1,6 @@
 ---
 title: Backing up Android Photos using Termux and Rsync
-description: There are countless strategies out there for backing up Android photos, but why get complicated when you can keep it simple with Rsync?
+description: A simple, incremental photo backup strategy for Android using Termux and Rsync.
 published: 2021-10-26
 tags: [Termux, Rsync, photos, backup, Android]
 ---

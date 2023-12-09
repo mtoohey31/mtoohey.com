@@ -1,6 +1,6 @@
 ---
 title: Connecting to UofT WiFi with iwd
-description: WPA enterprise configuration with IWD can be a little confusing, but here's what worked for me with UofT's WiFi network.
+description: Instructions for how to connect to UofT's WPA enterprise WiFi network using IWD.
 published: 2021-08-25
 modified: 2022-06-04
 tags: [UofT, WiFi, iwd]

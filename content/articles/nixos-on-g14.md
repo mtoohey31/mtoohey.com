@@ -2,11 +2,13 @@
 title: NixOS on the Zephyrus G14
 description: A walkthrough of configuring NixOS for the Zephyrus G14.
 published: 2022-04-10
-modified: 2022-04-27
+modified: 2023-12-09
 tags: [Asus Zephyrus G14, asusctl, supergfxctl, NixOS, Nix]
 ---
 
 <!-- cspell:ignore zephyrus asusctl supergfxctl pkgs uarches ALSA realtek mediatek wifi dont faili pstate PKGBUILD nixos nixpkgs itsfarseen vfio finegrained -->
+
+> Most of the information below is now out of date. Enough of the patches applied below have been merged into the kernel upstream that NixOS should work on the Zephyrus GA401 without any fancy configuration. The asusctl and supergfxctl PRs mentioned below have also been merged into nixpkgs.
 
 ## Disclaimer
 
