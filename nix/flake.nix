@@ -35,13 +35,16 @@
       };
       inherit (pkgs) go hugo mkShell nodePackages nodejs
         prettier-plugin-go-template;
-      inherit (nodePackages) prettier typescript-language-server;
+      inherit (nodePackages) cspell diagnostic-languageserver prettier
+        typescript-language-server;
     in
     {
       packages.default = pkgs."mtoohey.com";
 
       devShells.default = mkShell {
         packages = [
+          cspell
+          diagnostic-languageserver
           go
           hugo
           nodejs

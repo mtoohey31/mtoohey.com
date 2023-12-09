@@ -6,11 +6,11 @@ modified: 2022-06-04
 tags: [UofT, WiFi, iwd]
 ---
 
-<!-- cspell:ignore TLDR wlan iwctl utorid peap eduroam ssid -->
+<!-- cspell:ignore TLDR wlan iwctl utorid peap eduroam ssid MSCHAPV2 -->
 
 ## The TLDR
 
-```toml
+```ini
 # /var/lib/iwd/UofT.8021x
 [Security]
 EAP-Method=PEAP

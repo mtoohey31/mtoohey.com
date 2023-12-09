@@ -6,6 +6,8 @@ modified: 2022-04-27
 tags: [Asus Zephyrus G14, asusctl, supergfxctl, NixOS, Nix]
 ---
 
+<!-- cspell:ignore zephyrus asusctl supergfxctl pkgs uarches ALSA realtek mediatek wifi dont faili pstate PKGBUILD nixos nixpkgs itsfarseen vfio finegrained -->
+
 ## Disclaimer
 
 I've tested this on the 2021 model (the GA401), but not any other year. If you test it with a different model, let me know how it goes so I can update this message!
@@ -21,7 +23,7 @@ This article will cover the following configuration fixes:
 
 ## Kernel Version and Patches
 
-The 5.17 kernel includes some modifications that previously required patches, so I'd reccommend using that version or newer. Some patches are still required though, and they can be applied with the `boot.kernelPatches` configuration option.
+The 5.17 kernel includes some modifications that previously required patches, so I'd recommend using that version or newer. Some patches are still required though, and they can be applied with the `boot.kernelPatches` configuration option.
 
 First, we have to fetch the patches:
 
@@ -101,7 +103,7 @@ systemd.services.power-profiles-daemon = {
 services.asusctl.enable = true;
 ```
 
-If you don't want to use `asusctl`'s profile subcommand, you can ommit everything related to power-profiles-daemon. Note that in the future, power-profiles-daemon may be enabled automatically (see [this comment](https://github.com/NixOS/nixpkgs/pull/147786#issuecomment-1092347132)).
+If you don't want to use `asusctl`'s profile subcommand, you can omit everything related to power-profiles-daemon. Note that in the future, power-profiles-daemon may be enabled automatically (see [this comment](https://github.com/NixOS/nixpkgs/pull/147786#issuecomment-1092347132)).
 
 ## Suspend
 
