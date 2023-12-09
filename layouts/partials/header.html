@@ -1,0 +1,23 @@
+<header
+  style="
+    display: flex;
+    justify-content: space-between;
+    font-family: JetBrains Mono, monospace;
+  "
+>
+  <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}.com</a>
+  <div></div>
+  <div>
+    <span class="header-list-start">[</span>
+    {{- range $i, $section := site.Sections -}}
+      {{- if ne $i 0 -}}
+        <span class="header-list-delim">, </span>
+      {{- end -}}
+      <a href="{{ .RelPermalink }}">{{ $section.LinkTitle }}</a>
+    {{- end -}}
+    <span class="header-list-end">]</span>
+  </div>
+  <div></div>
+  <a style="opacity: 0; user-select: none">mtoohey.com</a>
+  {{ partialCached "header/js.html" . }}
+</header>

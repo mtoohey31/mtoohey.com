@@ -1,9 +1,8 @@
-.DS_Store
-/node_modules
-/.cloudflare
-/.svelte-kit
-/build
-/wrangler.toml
-/static/article-index.json
-/static/rss.xml
+result
 /.direnv
+
+/public
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+/.hugo_build.lock

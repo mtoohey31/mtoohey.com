@@ -1,0 +1,28 @@
+From 27bc61ffe5ef28f5a8c3364d51ee34fdfaaa4218 Mon Sep 17 00:00:00 2001
+From: Matthew Toohey <contact@mtoohey.com>
+Date: Sat, 9 Dec 2023 13:55:16 -0500
+Subject: [PATCH] Skip vendoring of mountless modules
+
+---
+ modules/client.go | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/modules/client.go b/modules/client.go
+index b9a2a48d4..d2f3a5262 100644
+--- a/modules/client.go
++++ b/modules/client.go
+@@ -235,10 +235,8 @@ func (c *Client) Vendor() error {
+ 			continue
+ 		}
+ 
+-		// See https://github.com/gohugoio/hugo/issues/8239
+-		// This is an error situation. We need something to vendor.
+ 		if t.Mounts() == nil {
+-			return fmt.Errorf("cannot vendor module %q, need at least one mount", t.Path())
++			continue
+ 		}
+ 
+ 		fmt.Fprintln(&modulesContent, "# "+t.Path()+" "+t.Version())
+-- 
+2.42.0
+

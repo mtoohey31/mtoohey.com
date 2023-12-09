@@ -1,9 +1,2 @@
-.DS_Store
-/node_modules
-/.cloudflare
-/.svelte-kit
-/build
-/wrangler.toml
-/static
-/package.json
-/pnpm-lock.yaml
+/nix/flake.lock
+/_vendor

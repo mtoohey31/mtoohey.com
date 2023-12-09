@@ -1,0 +1,29 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+
+  <div>
+    <pre
+      style="color:#ebdbb2; background-color:#282828; -moz-tab-size:4; -o-tab-size:4; tab-size:4"
+    ><code><span><span style="color: #fb4934">posted</span>
+      {{- $dateMachine := .PublishDate | time.Format "2006-01-02T15:04:05-07:00" -}}
+      {{- $dateHuman := .PublishDate | time.Format ":date_long" -}}
+      : <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></span>
+      {{- if ne .Lastmod .PublishDate -}}
+      <br /><span
+        ><span style="color: #fb4934">modified</span>
+        {{- $dateMachine := .Lastmod | time.Format "2006-01-02T15:04:05-07:00" -}}
+        {{- $dateHuman := .Lastmod | time.Format ":date_long" -}}
+        : <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></span
+      >
+    {{- end -}}
+    <br/><span><span style="color: #fb4934">tags</span>: [
+      {{- range $i, $tag := .GetTerms "tags" -}}
+      {{ if ne $i 0 }},&nbsp;{{ end }}<a href="{{ $tag.RelPermalink }}"
+        >{{ $tag.LinkTitle }}</a
+      >
+    {{- end -}}
+    ]</span></code></pre>
+  </div>
+
+  {{ .Content }}
+{{ end }}
