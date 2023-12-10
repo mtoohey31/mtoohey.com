@@ -33,7 +33,7 @@
         ];
         inherit system;
       };
-      inherit (pkgs) go hugo mkShell nodePackages nodejs
+      inherit (pkgs) caddy go hugo mkShell nodePackages nodejs
         prettier-plugin-go-template;
       inherit (nodePackages) cspell diagnostic-languageserver prettier
         typescript-language-server;
@@ -43,6 +43,7 @@
 
       devShells.default = mkShell {
         packages = [
+          caddy
           cspell
           diagnostic-languageserver
           go

@@ -1,0 +1,9 @@
+{
+	acme_dns cloudflare {env.CF_API_KEY}
+}
+
+https://mtoohey.com
+
+root * {env.MTOOHEY_ROOT}
+templates
+file_server

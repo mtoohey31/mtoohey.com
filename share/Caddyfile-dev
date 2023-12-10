@@ -1,0 +1,9 @@
+{
+	auto_https off
+}
+
+http://localhost:80
+
+root * public
+templates
+file_server
