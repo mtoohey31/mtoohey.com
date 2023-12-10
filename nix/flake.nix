@@ -12,7 +12,7 @@
         pname = "mtoohey.com";
         version = "0.1.0";
         src = builtins.path { path = ./..; name = "mtoohey.com-src"; };
-        buildInputs = [ final.git final.go final.hugo ];
+        buildInputs = [ final.hugo ];
         buildPhase = ''
           hugo -d $out/share/mtoohey.com/html
         '';
