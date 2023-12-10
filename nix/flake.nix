@@ -8,12 +8,6 @@
 
   outputs = { self, nixpkgs, utils }: {
     overlays.default = final: prev: {
-      hugo = prev.hugo.overrideAttrs (oldAttrs: {
-        patches = (oldAttrs.patches or [ ]) ++ [
-          ./patches/0001-Vendor-mountless-modules.patch
-        ];
-      });
-
       "mtoohey.com" = final.stdenv.mkDerivation {
         pname = "mtoohey.com";
         version = "0.1.0";
@@ -47,7 +41,13 @@
           cspell
           diagnostic-languageserver
           go
-          hugo
+          (hugo.overrideAttrs (oldAttrs: {
+            patches = (oldAttrs.patches or [ ]) ++ [
+              # TODO: Look into a full fix for this. Looks like all we have to
+              # do in this case is save the hugo.toml file.
+              ./patches/0001-Vendor-mountless-modules.patch
+            ];
+          }))
           nodejs
           prettier
           prettier-plugin-go-template
