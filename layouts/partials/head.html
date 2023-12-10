@@ -1,14 +1,16 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
-{{ safe.HTML `{{ if eq (.OriginalReq.URL.Query.Get "go-get") "1" }}
-  {{ $basename := (splitn "/" 3 .OriginalReq.URL.Path)._1 }}
-  {{ if $basename }}
-    <meta
-      name="go-import"
-      content="mtoohey.com/{{ $basename }} git https://github.com/mtoohey31/{{ $basename }}.git"
-    />
-  {{ end }}
-{{ end }}` }}
+{{ if hugo.IsProduction }}
+  {{ safe.HTML `{{ if eq (.OriginalReq.URL.Query.Get "go-get") "1" }}
+    {{ $basename := (splitn "/" 3 .OriginalReq.URL.Path)._1 }}
+    {{ if $basename }}
+      <meta
+        name="go-import"
+        content="mtoohey.com/{{ $basename }} git https://github.com/mtoohey31/{{ $basename }}.git"
+      />
+    {{ end }}
+  {{ end }}` }}
+{{ end }}
 <title>
   {{ if .IsHome }}
     {{ site.Title }}
