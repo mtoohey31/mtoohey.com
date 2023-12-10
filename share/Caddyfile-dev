@@ -1,8 +1,9 @@
 {
 	auto_https off
+	admin off
 }
 
-http://localhost:80
+localhost:80
 
 root * public
 templates

@@ -1,15 +1,16 @@
 {
-	acme_dns cloudflare {env.CF_API_KEY}
+	import @extra-global-config@
+	admin off
 }
 
-https://mtoohey.com
-
-root * {env.MTOOHEY_ROOT}
-templates
-file_server
-
-handle_errors {
+https://mtoohey.com, https://info.mtoohey.com, https://www.mtoohey.com, https://www.info.mtoohey.com {
+	root * {env.MTOOHEY_HTML_ROOT}
 	templates
-	rewrite * /404/index.html
 	file_server
+
+	handle_errors {
+		templates
+		rewrite * /404/index.html
+		file_server
+	}
 }
