@@ -3,7 +3,9 @@
   {{ .Content }}
   <hr />
   {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Description }}
+    {{ if ne .LinkTitle "404" }}
+      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      {{ .Description }}
+    {{ end }}
   {{ end }}
 {{ end }}
