@@ -1,36 +1,45 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+  <article itemscope itemtype="http://schema.org/Article">
+    <meta itemprop="publisher" content="mtoohey.com" />
+    <meta itemprop="author" rel="author" content="Matthew Toohey" />
+    <h1 itemprop="name headline">{{ .Title }}</h1>
 
-  {{ if .PublishDate }}
-    <div>
-      <pre
-        style="color:#ebdbb2; background-color:#282828; -moz-tab-size:4; -o-tab-size:4; tab-size:4"
-      ><code><span><span style="color: #fb4934">posted</span>
+    {{ if .PublishDate }}
+      <div>
+        <pre
+          style="color:#ebdbb2; background-color:#282828; -moz-tab-size:4; -o-tab-size:4; tab-size:4"
+        ><code><span><span style="color: #fb4934">posted</span>
       {{- $dateMachine := .PublishDate | time.Format "2006-01-02T15:04:05-07:00" -}}
       {{- $dateHuman := .PublishDate | time.Format ":date_long" -}}
-      : <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></span>
+      : <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></span><meta itemprop="dateCreated" content="{{ $dateMachine }}" /><meta itemprop="datePublished" content="{{ $dateMachine }}" />
       {{- if ne .Lastmod .PublishDate -}}
-        <br /><span
-          ><span style="color: #fb4934">modified</span>
-          {{- $dateMachine := .Lastmod | time.Format "2006-01-02T15:04:05-07:00" -}}
-          {{- $dateHuman := .Lastmod | time.Format ":date_long" -}}
-          : <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></span
-        >
-      {{- end -}}
-    {{- if .GetTerms "tags" -}}
-        <br /><span
-          ><span style="color: #fb4934">tags</span>: [
-          {{- range $i, $tag := .GetTerms "tags" -}}
-            {{ if ne $i 0 }},&nbsp;{{ end }}<a href="{{ $tag.RelPermalink }}"
-              >{{ $tag.LinkTitle }}</a
-            >
-          {{- end -}}
-          ]</span
-        >
-      {{- end -}}
+          <br /><span
+            ><span style="color: #fb4934">modified</span>
+            {{- $dateMachine := .Lastmod | time.Format "2006-01-02T15:04:05-07:00" -}}
+            {{- $dateHuman := .Lastmod | time.Format ":date_long" -}}
+            : <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></span
+          ><meta itemprop="dateModified" content="{{ $dateMachine }}" />
+        {{- else -}}
+          <meta itemprop="dateModified" content="{{ $dateMachine }}" />
+        {{- end -}}
+        {{- if .GetTerms "tags" -}}
+          <br /><span
+            ><span style="color: #fb4934">tags</span>: [
+            {{- range $i, $tag := .GetTerms "tags" -}}
+              {{ if ne $i 0 }},&nbsp;{{ end }}<a href="{{ $tag.RelPermalink }}"
+                >{{ $tag.LinkTitle }}</a
+              >
+            {{- end -}}
+            ]</span
+          >
+        {{- end -}}
       </code></pre>
-    </div>
-  {{ end }}
+      </div>
+    {{ end }}
 
-  {{ .Content }}
+
+    <div itemprop="articleBody">
+      {{ .Content }}
+    </div>
+  </article>
 {{ end }}

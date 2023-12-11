@@ -1,11 +1,13 @@
 {{ define "main" }}
-  <h1>about</h1>
-  {{ .Content }}
-  <hr />
-  {{ range site.RegularPages }}
-    {{ if ne .LinkTitle "404" }}
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      {{ .Description }}
+  <article itemscope itemtype="http://schema.org/Author">
+    <h1>about</h1>
+    {{ .Content }}
+    <hr />
+    {{ range site.RegularPages }}
+      {{ if ne .LinkTitle "404" }}
+        <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+        {{ .Description }}
+      {{ end }}
     {{ end }}
-  {{ end }}
+  </article>
 {{ end }}
