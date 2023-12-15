@@ -1,8 +1,8 @@
 {{ define "main" }}
   <article itemscope itemtype="http://schema.org/Author">
-    <h1>about</h1>
+    <h1>About</h1>
     {{ .Content }}
-    <hr />
+    <h1>Articles</h1>
     {{ range site.RegularPages }}
       {{ if ne .LinkTitle "404" }}
         <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
