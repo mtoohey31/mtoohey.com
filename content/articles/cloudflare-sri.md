@@ -12,13 +12,13 @@ tags: [SRI, Cloudflare, Hugo]
 
 If you're seeing an error similar to the following in Chrome:
 
-```
+```text
 Failed to find a valid digest in the 'integrity' attribute for resource '...' with computed ... integrity '...'. The resource has been blocked.
 ```
 
 ...or this one, in Firefox:
 
-```
+```text
 None of the “...” hashes in the integrity attribute match the content of the subresource. The computed hash is “...”.
 ```
 
