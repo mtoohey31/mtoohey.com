@@ -2,7 +2,8 @@
 title: Control Flow Monad
 description: An example of an interesting application of monads for an interpreter in OCaml.
 published: 2024-03-15
-tags: [monad, ocaml]
+modified: 2024-03-18
+tags: [monad, OCaml]
 ---
 
 <!-- cspell:ignore ocaml -->
