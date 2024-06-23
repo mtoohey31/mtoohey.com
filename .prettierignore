@@ -1,3 +1,4 @@
 /nix/flake.lock
 /_vendor
+/vendor
 /layouts/partials/head.html

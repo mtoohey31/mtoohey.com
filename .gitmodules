@@ -1,0 +1,3 @@
+[submodule "vendor/ai.robots.txt"]
+	path = vendor/ai.robots.txt
+	url = git@github.com:ai-robots-txt/ai.robots.txt
