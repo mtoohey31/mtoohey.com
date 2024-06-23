@@ -2,8 +2,8 @@
 
 buildGoModule {
   pname = "caddy-cloudflare";
-  version = "2.7.6";
+  version = "v2.8.4";
   src = ./.;
-  vendorHash = "sha256-aBJUUC+k3EIRqOtr59k82g/gXXvnQo5NV/QGMuiiK+w=";
+  vendorHash = "sha256-AzrRZi1dGZLVx+1vW+jCNgwq/1YFQU+OaNlMjUj2bI0=";
   meta.mainProgram = "caddy";
 }
