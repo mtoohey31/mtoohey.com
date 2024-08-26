@@ -3,7 +3,7 @@
 	admin off
 }
 
-https://mtoohey.com, https://info.mtoohey.com, https://www.mtoohey.com, https://www.info.mtoohey.com {
+mtoohey.com info.mtoohey.com www.mtoohey.com {
 	root * {env.MTOOHEY_HTML_ROOT}
 	templates
 	file_server
