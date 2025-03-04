@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width" />
 {{ if hugo.IsProduction }}
   {{ safe.HTML `{{ if eq (.OriginalReq.URL.Query.Get "go-get") "1" }}
-    {{ $basename := (splitn "/" 3 .OriginalReq.URL.Path)._1 }}
+    {{ $basename := stripHTML (splitn "/" 3 .OriginalReq.URL.Path)._1 }}
     {{ if $basename }}
       <meta
         name="go-import"
