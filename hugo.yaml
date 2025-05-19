@@ -2,6 +2,9 @@ baseURL: https://mtoohey.com
 languageCode: en-us
 title: mtoohey
 markup:
+  goldmark:
+    renderer:
+      unsafe: true
   highlight:
     style: gruvbox
 module:
