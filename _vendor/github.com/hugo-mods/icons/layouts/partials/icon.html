@@ -1,0 +1,78 @@
+<!-- Parameter setting and validation -->
+{{ $icon := false }}
+{{ $context := false }}
+{{ $loader := default "svg-use" site.Params.mod_icons.defaultLoader }}
+{{ if (reflect.IsMap .) }}
+    {{ $usage := `use like 'partial "icon" (dict "context" . "name" "YOUR-ICON") and ensure that page context is accessible` }}
+    {{ $loader = default $loader .loader }}
+    {{ if not .name }}
+        {{ errorf "mod-icons: missing icon name: %s" $usage }}
+    {{ end }}
+    {{ $contextType := (printf "%T" .context) }}
+    {{ if and $context (not (in $contextType "page")) }}
+        {{ errorf "mod-icons: invalid context given of type %s. %s" $contextType $usage }}
+    {{ end }}
+    {{ $icon = trim .name " " }}
+    {{ $context = .context }}
+{{ else }}
+    {{ $icon = trim . " " }}
+{{ end }}
+{{ if not $icon }}
+    {{ errorf "mod-icons: 'name' of icon must be given" }}
+{{ end }}
+{{ $loader = printf "loaders/%s" $loader }}
+
+<!-- User's custom mapping -->
+{{ $iconDict := dict }}
+{{ if site.Data.icons }}
+{{ with index site.Data.icons $icon }}
+    {{ if reflect.IsMap . }}
+        {{ $iconDict = dict 
+            "resolvedBy" "icons-data-file" 
+            "id" (replace $icon  " " "-")
+            "label" (default "" (default .alt .title))
+            "description" (default "" (default .description .desc)) }}
+        {{ $icon = trim .id " " }}
+    {{ else }}
+        {{ $iconDict = dict 
+            "resolvedBy" "icons-data-file" 
+            "id" (replace $icon " " "-") }}
+        {{ $icon = trim . " " }}
+    {{ end }}
+{{ end }}
+{{ end }}
+
+<!-- Resolve if necessary -->
+{{ $resolved := false }}
+{{ with $context }}
+    {{ with .Scratch.Get "mod-icons" }}
+        {{ $resolved = index . $icon }}
+    {{ end }}
+{{ end }}
+{{ if not $resolved }}
+    {{ $resolved = partial "icon-resolve" (dict "icon" $icon) }}
+    {{ $baseClass := default "icon" site.Params.mod_icons.iconBaseClass }} 
+    <!-- Classes is currently not used -->
+    {{/* $classes := (printf "%s %s" $baseClass $resolved.style) */}}
+    {{ $iconDict = merge $iconDict (dict "class" $baseClass) }}
+    {{ if not site.Params.mod_icons.enableAutoTitle }}
+        {{ $iconDict = merge $iconDict (dict "label" "") }}
+    {{ end }}
+    {{ $resolved = merge $resolved $iconDict }}
+{{ end }}
+
+<!-- Add to used icons -->
+{{ with $context }}
+    {{ .Scratch.SetInMap "mod-icons" $resolved.id $resolved }}
+    <!-- Add usage stats: -->
+    {{ $count := 1 }}
+    {{ with (.Scratch.Get "mod-icons_usage") }}
+        {{ with (index . $resolved.id) }}
+          {{ $count = add . 1 }}
+        {{ end }}
+    {{ end }}
+    {{ .Scratch.SetInMap "mod-icons_usage" $resolved.id $count }}
+{{ end }}
+
+<!-- Return icon use -->
+{{ return (partial $loader $resolved) }}

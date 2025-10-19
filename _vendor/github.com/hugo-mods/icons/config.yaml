@@ -1,0 +1,21 @@
+Params:
+  mod_icons:
+    enableAutoTitle: true
+    enableStats: false
+    defaultLoader: svg-use
+    defaultLoaderShortcode: svg-inline
+    iconBaseClass: icon
+
+module:
+  hugoVersion:
+    extended: true
+    # needed for multi-line dicts and some other advanced features:
+    min: "0.80.0"  
+    max: "1.00.0"
+  imports:
+  - path: "github.com/FortAwesome/Font-Awesome"
+    mounts:
+    - source: "svgs/"
+      target: "assets/mod-icons/fa/svg/"
+    - source: "metadata/"
+      target: "assets/mod-icons/fa/meta/"

@@ -1,9 +1,8 @@
 module mtoohey.com/mtoohey.com
 
-go 1.21.7
+go 1.25.1
 
 require (
-	github.com/Templarian/MaterialDesign-SVG v7.4.47+incompatible // indirect
-	github.com/hugomods/icons v0.6.6 // indirect
-	github.com/hugomods/icons/vendors/mdi v0.3.8 // indirect
+	github.com/FortAwesome/Font-Awesome v0.0.0-20210316185733-d79d85c3fad8 // indirect
+	github.com/hugo-mods/icons v0.0.0-20220508080705-d938a1900b1c // indirect
 )

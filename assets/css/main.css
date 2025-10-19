@@ -86,6 +86,24 @@ div.highlight > pre {
   overflow: scroll;
 }
 
+svg.icon {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+}
+
+a.footer-link {
+  text-decoration: none;
+}
+
+a.footer-link > code {
+  text-decoration: underline;
+}
+
+.footer-entry {
+  margin: 0.5em;
+}
+
 blockquote {
   border-style: solid;
   border-width: 0;
@@ -133,6 +151,14 @@ a {
   color: #458588;
 }
 
+a > svg.icon {
+  fill: #458588;
+}
+
+svg.icon {
+  fill: #ebdbb2;
+}
+
 @media (prefers-color-scheme: light) {
   body {
     background-color: #fbf1c7;
@@ -175,5 +201,13 @@ a {
 
   a {
     color: #076678;
+  }
+
+  a > svg.icon {
+    fill: #076678;
+  }
+
+  svg.icon {
+    fill: #3c3836;
   }
 }

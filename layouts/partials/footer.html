@@ -3,19 +3,22 @@
     href="https://github.com/mtoohey31"
     target="_blank"
     rel="noopener noreferrer"
-    >{{ partial "icons/icon" (dict "vendor" "mdi" "name" "github") }}<code>
-      mtoohey31</code
+    class="footer-link footer-entry"
+    >{{ partial "icon" (dict "context" . "name" "fab github") }}<code
+      >mtoohey31</code
     ></a
-  ><code> </code
   ><a
-    href="https://gitlab.com/mtoohey"
+    href="https://orcid.org/0009-0006-2253-7193"
     target="_blank"
     rel="noopener noreferrer"
-    >{{ partial "icons/icon" (dict "vendor" "mdi" "name" "gitlab") }}<code>
-      mtoohey</code
+    class="footer-link footer-entry"
+    >{{ partial "icon" (dict "context" . "name" "fab orcid") }}<code
+      >ORCID</code
     ></a
-  ><code> </code
-  >{{ partial "icons/icon" (dict "vendor" "mdi" "name" "email") }}<code>
-    &#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#109;&#116;&#111;&#111;&#104;&#101;&#121;&#046;&#099;&#111;&#109;</code
+  ><span class="footer-entry"
+    >{{ partial "icon" (dict "context" . "name" "fas envelope") }}<code
+      >&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#109;&#116;&#111;&#111;&#104;&#101;&#121;&#046;&#099;&#111;&#109;</code
+    ></span
   >
+  {{ partial "icon-data" . }}
 </footer>

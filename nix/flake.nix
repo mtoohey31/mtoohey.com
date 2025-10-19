@@ -77,13 +77,7 @@
           cspell
           diagnostic-languageserver
           go
-          (hugo.overrideAttrs (oldAttrs: {
-            patches = (oldAttrs.patches or [ ]) ++ [
-              # TODO: Look into a full fix for this. Looks like all we have to
-              # do in this case is save the hugo.toml file.
-              ./patches/0001-Vendor-mountless-modules.patch
-            ];
-          }))
+          hugo
           nodejs
           prettier
           prettier-plugin-go-template
